@@ -5,11 +5,12 @@
   justify-content: space-between;
   margin: 50px auto;
   padding: 30px 10px;
-  background-color: beige;
+  background-color: whitesmoke;
 }
 
 .job:hover {
   cursor: pointer;
+  color: blue;
 }
 
 .jobCompany {

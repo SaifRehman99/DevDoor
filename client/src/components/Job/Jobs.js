@@ -4,9 +4,21 @@ import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
 
 import Job from './Job';
+import JobModal from './JobModal';
 
 const Jobs = ({ jobs }) => {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [selectedJob, selectJob] = React.useState({});
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -27,15 +39,24 @@ const Jobs = ({ jobs }) => {
 
   return (
     <div className='jobs'>
+      <JobModal open={open} handleClose={handleClose} job={selectedJob} />
       <Typography variant='h3' components='h1'>
         Entry Level Software Jobs
       </Typography>
       <Typography variant='h6' components='h1'>
         Found {jobs.length} Jobs
       </Typography>
+
       <Typography>
         {jobsPerPage.map((job, i) => (
-          <Job key={i} job={job} />
+          <Job
+            key={i}
+            job={job}
+            onClick={() => {
+              handleClickOpen();
+              selectJob(job);
+            }}
+          />
         ))}
       </Typography>
 

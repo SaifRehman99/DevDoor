@@ -28,6 +28,15 @@
   color: #61dafb;
 }
 
+.detail-logo {
+  height: 30px;
+  float: right;
+}
+
+a {
+  text-decoration: underline !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

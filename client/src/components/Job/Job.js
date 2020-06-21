@@ -5,9 +5,11 @@ import Moment from 'react-moment';
 
 import style from './Job.module.css';
 
-const Job = ({ job: { title, company, location, created_at } }) => {
+import Modal from './JobModal';
+
+const Job = ({ job: { title, company, location, created_at }, onClick }) => {
   return (
-    <div className={style.job}>
+    <div className={style.job} onClick={onClick}>
       <div>
         <Typography variant='h6'>{title}</Typography>
         <Typography variant='h5' className={style.jobCompany}>
