@@ -1,0 +1,21 @@
+.job {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+  padding: 30px 10px;
+  background-color: beige;
+}
+
+.job:hover {
+  cursor: pointer;
+}
+
+.jobCompany {
+  padding: 0 30px;
+}
+
+.job-dialog {
+  padding: 30px 50px;
+}
